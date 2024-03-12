@@ -1,4 +1,5 @@
 using PortfolioMessenger.Api.Config;
+using PortfolioMessenger.Api.Cors;
 using PortfolioMessenger.Api.Endpoints;
 using PortfolioMessenger.Api.Services;
 
@@ -10,6 +11,9 @@ builder.Services.Configure<EmailApiOptions>(configuration.GetSection("EmailApiOp
 builder.Services.Configure<EmailApiAccessOptions>(configuration.GetSection(nameof(EmailApiAccessOptions)));
 builder.Services.AddTransient<ISendEmailService, SendEmailService>();
 builder.Services.AddHttpClient<ISendEmailService, SendEmailService>();
+
+builder.Services.AddSendEmailCors(configuration);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -26,6 +30,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapSendEmailEndpoints();
+
+app.UseCors();
 
 app.Run();
 
