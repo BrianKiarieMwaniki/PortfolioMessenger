@@ -1,4 +1,5 @@
 using PortfolioMessenger.Api.Config;
+using PortfolioMessenger.Api.Endpoints;
 using PortfolioMessenger.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,7 +25,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-
+app.MapSendEmailEndpoints();
 
 app.Run();
 
