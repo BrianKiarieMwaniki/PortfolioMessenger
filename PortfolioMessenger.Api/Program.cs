@@ -18,6 +18,8 @@ builder.Services.AddSendEmailCors(configuration);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Logging.AddAzureWebAppDiagnostics();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
