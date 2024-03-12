@@ -1,0 +1,6 @@
+@PortfolioMessenger.Api_HostAddress = http://localhost:5280
+
+GET {{PortfolioMessenger.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
