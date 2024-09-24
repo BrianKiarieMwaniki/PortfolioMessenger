@@ -1,6 +1,3 @@
-using System.Text.RegularExpressions;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
 using PortfolioMessenger.Api.Services;
 
 namespace PortfolioMessenger.Api.Endpoints;
